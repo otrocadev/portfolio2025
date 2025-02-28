@@ -4,8 +4,10 @@
 
 <header>
   <div id="header-wrapper">
-    <img id="logo" src="/otrocadev-logo.svg" alt="Otrocadev's logo" />
-    <h2>otroca.dev</h2>
+    <div id="logo-wrapper">
+      <img id="logo" src="/otrocadev-logo.svg" alt="Otrocadev's logo" />
+      <h2>otroca.dev</h2>
+    </div>
     <div>
       <a href="http://" target="_blank" rel="noopener noreferrer">hola</a>
     </div>
@@ -14,11 +16,10 @@
 
 <style>
   h2 {
-    font-family: 'Roboto Condensed', Roboto, Inter, serif;
-    font-optical-sizing: auto;
+    font-family: 'Anonymous Pro', serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 28px;
+    font-size: 32px;
     margin: 0 1rem;
   }
 
@@ -30,7 +31,7 @@
     color: var(--screaming-green);
     backdrop-filter: blur(8px);
     box-sizing: border-box;
-    background: var(--navy);
+    z-index: 2;
   }
 
   #header-wrapper {
@@ -42,6 +43,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
+  }
+
+  #logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   #logo {

@@ -1,0 +1,84 @@
+---
+
+---
+
+<section id="hero">
+  <div id="presentation">
+    <span>Hello, my name is</span>
+    <h1>Ot Roca</h1>
+    <span>I am a</span>
+    <h2>Frontend developer</h2>
+    <p>Passionate about web development, always learning and building 🚀</p>
+    <a id="cv-btn" href="http://">Download resume</a>
+  </div>
+  <img id="img-otrocadev" src="/ot-roca-no-bg.avif" alt="" />
+</section>
+
+<style>
+  h1 {
+    font-family: 'Anonymous Pro', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+    margin: 0.6rem 0;
+    @media (min-width: 480px) {
+      color: var(--slate-gray);
+      font-size: 72px;
+    }
+  }
+
+  h2 {
+    font-family: 'Anonymous Pro', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 36px;
+    margin: 0.6rem 0;
+    color: var(--screaming-green);
+    @media (min-width: 480px) {
+      font-size: 48px;
+    }
+  }
+
+  #hero {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #presentation {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
+    max-width: 400px;
+  }
+
+  #cv-btn {
+    font-family: 'Anonymous Pro', serif;
+    width: fit-content;
+    color: var(--richblack);
+    background: var(--screaming-green);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    border: 2px var(--screaming-green) solid;
+    transition: transform 0.3s ease;
+  }
+
+  #cv-btn:hover {
+    color: var(--screaming-green);
+    background: var(--navy);
+    transform: translateY(-3px);
+  }
+
+  img {
+    mask-image: linear-gradient(black 80%, transparent);
+    position: relative;
+    width: 100%;
+    @media (min-width: 480px) {
+      width: auto;
+    }
+  }
+</style>
