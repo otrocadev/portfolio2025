@@ -3,7 +3,7 @@ const { title, githubLink, liveLink, imageUrl, right = false } = Astro.props
 ---
 
 <article class={right ? 'project-card right-image' : 'project-card left-image'}>
-  <img src={imageUrl} alt="" />
+  <img src={imageUrl} alt=`Screenshot of the project ${title}` />
   <div class="card-info">
     <h3>{title}</h3>
     <p>

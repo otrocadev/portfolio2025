@@ -1,0 +1,29 @@
+---
+import Presentation from '../sections/Presentation.astro'
+import Projects from '../sections/Projects.astro'
+import Contact from '../sections/Contact.astro'
+---
+
+<main>
+  <Presentation />
+  <Projects />
+  <Contact />
+</main>
+
+<style>
+  main {
+    font-family: 'Gudea', Inter, Roboto, 'Helvetica Neue', 'Arial Nova',
+      'Nimbus Sans', Arial, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 100px;
+    margin: auto;
+    @media (min-width: 480px) {
+      max-width: 1024px;
+    }
+  }
+</style>
