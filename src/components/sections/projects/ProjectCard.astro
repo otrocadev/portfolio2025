@@ -1,5 +1,13 @@
 ---
-const { title, githubLink, liveLink, imageUrl, right = false } = Astro.props
+const {
+  title,
+  githubLink,
+  liveLink,
+  imageUrl,
+  right = false,
+  techs,
+} = Astro.props
+import Tecnologies from './Tecnologies.astro'
 ---
 
 <article class={right ? 'project-card right-image' : 'project-card left-image'}>
@@ -9,6 +17,7 @@ const { title, githubLink, liveLink, imageUrl, right = false } = Astro.props
     <p>
       <slot />
     </p>
+    <Tecnologies techs={techs} />
     <div id="btns">
       <a
         id="github-btn"
@@ -77,6 +86,7 @@ const { title, githubLink, liveLink, imageUrl, right = false } = Astro.props
   }
 
   #btns {
+    margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

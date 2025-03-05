@@ -1,0 +1,41 @@
+---
+const { techs = [] } = Astro.props
+
+import { Icon } from 'astro-icon/components'
+---
+
+<div id="techs-wrapper">
+  {
+    techs.map((tech: String) => (
+      <div id="tech-icon">
+        <Icon class="icon" name={tech} />
+        <p>{tech[0].toUpperCase() + tech.slice(1)}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  #techs-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #tech-icon {
+    font-family: 'Anonymous Pro', serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+</style>
