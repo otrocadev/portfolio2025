@@ -9,7 +9,7 @@
     <span>I am a</span>
     <h2>Frontend developer</h2>
     <p>Passionate about web development, always learning and building 🚀</p>
-    <a id="cv-btn" target="_blank" href="public/CV_OtRoca2025(en).pdf"
+    <a class="primary-btn" target="_blank" href="public/CV_OtRoca2025(en).pdf"
       >Download resume</a
     >
   </div>
@@ -41,10 +41,7 @@
   }
 
   #hero {
-    display: flex;
     flex-wrap: wrap-reverse;
-    align-items: center;
-    justify-content: center;
     min-height: 80dvh;
     @media (min-width: 1580px) {
       min-height: 90dvh;
@@ -57,25 +54,6 @@
     margin: 0;
     padding: 1rem;
     max-width: 400px;
-  }
-
-  #cv-btn {
-    font-family: 'Anonymous Pro', serif;
-    width: fit-content;
-    color: var(--richblack);
-    background: var(--screaming-green);
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 0.4rem;
-    border: 2px var(--screaming-green) solid;
-    transition: transform 0.3s ease;
-  }
-
-  #cv-btn:hover {
-    color: var(--screaming-green);
-    background: var(--navy);
-    transform: translateY(-3px);
   }
 
   img {

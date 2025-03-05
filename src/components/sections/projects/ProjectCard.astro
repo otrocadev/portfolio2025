@@ -20,13 +20,13 @@ import Tecnologies from './Tecnologies.astro'
     <Tecnologies techs={techs} />
     <div id="btns">
       <a
-        id="github-btn"
+        class="secondary-btn"
         href={githubLink}
         target="_blank"
         rel="noopener noreferrer">Github code</a
       >
       <a
-        id="live-btn"
+        class="primary-btn"
         href={liveLink}
         target="_blank"
         rel="noopener noreferrer"
@@ -90,39 +90,5 @@ import Tecnologies from './Tecnologies.astro'
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-
-  a {
-    font-family: 'Anonymous Pro', serif;
-    width: fit-content;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 0.4rem;
-    transition: transform 0.3s ease;
-  }
-
-  #github-btn {
-    border: 2px var(--screaming-green) solid;
-    color: var(--screaming-green);
-    background: var(--richblack);
-  }
-
-  #github-btn:hover {
-    color: var(--richblack);
-    background: var(--screaming-green);
-    transform: translateY(-3px);
-  }
-
-  #live-btn {
-    border: 2px var(--screaming-green) solid;
-    color: var(--richblack);
-    background: var(--screaming-green);
-  }
-
-  #live-btn:hover {
-    color: var(--screaming-green);
-    background: none;
-    transform: translateY(-3px);
   }
 </style>

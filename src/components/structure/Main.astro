@@ -2,15 +2,17 @@
 import Presentation from '../sections/Presentation.astro'
 import Projects from '../sections/Projects.astro'
 import Contact from '../sections/Contact.astro'
+import Experience from '../sections/Experience.astro'
 ---
 
 <main>
   <Presentation />
   <Projects />
+  <Experience />
   <Contact />
 </main>
 
-<style>
+<style is:global>
   main {
     font-family: 'Gudea', Inter, Roboto, 'Helvetica Neue', 'Arial Nova',
       'Nimbus Sans', Arial, sans-serif;
@@ -25,5 +27,64 @@ import Contact from '../sections/Contact.astro'
     @media (min-width: 480px) {
       max-width: 1024px;
     }
+  }
+
+  section {
+    margin: 2rem 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h2 {
+    color: var(--screaming-green);
+    font-family: 'Anonymous Pro', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin: 4rem 0 1rem 0;
+  }
+
+  a {
+    font-family: 'Anonymous Pro', serif;
+    width: fit-content;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease;
+  }
+  .primary-btn {
+    font-family: 'Anonymous Pro', serif;
+    width: fit-content;
+    color: var(--richblack);
+    background: var(--screaming-green);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    border: 2px var(--screaming-green) solid;
+    transition: transform 0.3s ease;
+  }
+
+  .primary-btn:hover,
+  .primary-btn:active {
+    color: var(--screaming-green);
+    background: var(--navy);
+    transform: translateY(-3px);
+  }
+
+  .secondary-btn {
+    border: 2px var(--screaming-green) solid;
+    color: var(--screaming-green);
+    background: var(--richblack);
+  }
+
+  .secondary-btn:hover,
+  .secondary-btn:active {
+    color: var(--richblack);
+    background: var(--screaming-green);
+    transform: translateY(-3px);
   }
 </style>
