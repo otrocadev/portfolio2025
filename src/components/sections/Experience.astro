@@ -1,7 +1,112 @@
 ---
+import { Icon } from 'astro-icon/components'
+import ExperienceCard from './experiences/ExperienceCard.astro'
 
+const jobs = [
+  {
+    title: 'Digital Solutions fullstack developer',
+    company: 'Wallbox Chargers',
+    location: 'Barcelona, Spain (Hybrid)',
+    dates: 'sept. 2021 - mar. 2022',
+    description: [
+      '🚀  During this period I had the oportunity to develop a custom platform to monitor and manage SIM cards in some of the company chargers.',
+      '⚙️  I created a user-friendly tool for technicians and engineers to access real-time data, saving time and having the oportunity to have global reports of the general charger network.',
+    ],
+  },
+  {
+    title: 'IT Support Technician',
+    company: 'ESEIAAT - UPC',
+    location: 'Terrassa, Spain',
+    dates: 'sept. 2019 - jul. 2021',
+    description: [
+      '🪛  My duties in UPC where to provide IT support to teachers and computer classrooms.',
+      '📦  Managing inventory, updating and reparing the TIC equipment.',
+      '💻  Assisting in web development tasks, creating responsive interfaces.',
+    ],
+  },
+]
 ---
 
-<section id="experience"></section>
+<section>
+  <h2>Professional Experience</h2>
+  <div id="timeline">
+    <div id="bar"></div>
+    <div id="nothing"></div>
+    <ul id="jobs">
+      {
+        jobs.slice(0, -1).map((job) => (
+          <li>
+            <Icon class="li-dots" name="briefcase" />
+            <ExperienceCard
+              title={job.title}
+              company={job.company}
+              location={job.location}
+              dates={job.dates}
+              description={job.description}
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <div id="last-job">
+      <ul>
+        <li>
+          <Icon class="li-dots" name="briefcase" />
+          <ExperienceCard
+            title={jobs[jobs.length - 1].title}
+            company={jobs[jobs.length - 1].company}
+            location={jobs[jobs.length - 1].location}
+            dates={jobs[jobs.length - 1].dates}
+            description={jobs[jobs.length - 1].description}
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<style></style>
+<style>
+  #timeline {
+    width: 80%;
+    display: grid;
+    grid-template-areas:
+      'bar jobs'
+      'nothing last-job';
+  }
+
+  ul {
+    margin: 0 -22px;
+    padding: 0 0px;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #bar {
+    margin-top: 26px;
+    grid-area: bar;
+    width: 4px;
+    height: 100%;
+    background: var(--screaming-green);
+  }
+  #jobs {
+    grid-area: jobs;
+  }
+  #last-job {
+    grid-area: last-job;
+  }
+  #nothing {
+    grid-area: nothing;
+    width: 4px;
+  }
+
+  .li-dots {
+    padding: 12px;
+    background: var(--seablue);
+    border-radius: 100%;
+  }
+</style>

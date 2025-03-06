@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<section id="contact">
+<section>
   <h2>Let's connect!</h2>
   <div id="connect-container">
     <div id="links">
@@ -33,18 +33,19 @@ import { Icon } from 'astro-icon/components'
 </section>
 
 <style>
-  #contact {
-    gap: 2rem;
-  }
-
   h3 {
     font-family: 'Anonymous Pro', serif;
     font-weight: 700;
     font-style: normal;
     font-size: 36px;
     margin: 1rem 0;
+    color: var(--antiflash-white);
   }
 
+  h3:hover,
+  h3:active {
+    text-decoration: underline;
+  }
   p {
     color: var(--screaming-green);
     font-weight: 700;

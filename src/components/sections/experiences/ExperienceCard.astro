@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { title, company, location, dates, description = [] } = Astro.props
+---
+
+<article>
+  <h3>{title}</h3>
+  <p id="subtitle">
+    <span>{company}</span>
+    |
+    <span>
+      <Icon name="map-pin" />
+      {location}
+    </span>
+  </p>
+  <p id="dates">{dates}</p>
+  {description.map((element: String) => <p>{element}</p>)}
+</article>
+
+<style>
+  article {
+    width: 100%;
+    border: 2px var(--seablue) solid;
+    border-radius: 1rem;
+    background: var(--richblack);
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  article:hover,
+  article:active {
+    border-color: var(--slate-gray);
+  }
+
+  #subtitle {
+    color: var(--slate-gray);
+    font-size: 24px;
+    margin: 1rem 0 0 0;
+  }
+
+  #dates {
+    color: var(--slate-gray);
+  }
+
+  p {
+    margin: 0.6rem 0 0 0;
+  }
+</style>
