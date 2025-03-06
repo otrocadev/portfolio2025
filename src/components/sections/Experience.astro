@@ -27,7 +27,7 @@ const jobs = [
 ]
 ---
 
-<section>
+<section id="experience">
   <h2>Professional Experience</h2>
   <div id="timeline">
     <div id="bar"></div>
@@ -92,6 +92,10 @@ const jobs = [
     width: 4px;
     height: 100%;
     background: var(--screaming-green);
+    display: none;
+    @media (min-width: 720px) {
+      display: block;
+    }
   }
   #jobs {
     grid-area: jobs;
@@ -108,5 +112,9 @@ const jobs = [
     padding: 12px;
     background: var(--seablue);
     border-radius: 100%;
+    display: none;
+    @media (min-width: 720px) {
+      display: block;
+    }
   }
 </style>
