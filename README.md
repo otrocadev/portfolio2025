@@ -1,48 +1,39 @@
-# Astro Starter Kit: Basics
+# Porfolio Ot Roca [@otrocadev]
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+![Ot Roca - otrocadev porfolio screenshot](/public/porfolio-screenshot.avif)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+This is the repo for my updated porfolio for 2025! This time I have created a more simplified interface that has just the basic information to avoid distractions and have a cleaner look.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Stack
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+For this project I wanted to center on an aproach close to the standard web langages and that is why I choosed the ones mentioned below, using only Astro for separing the components and having a smother developing experience.
 
-## 🚀 Project Structure
+- 🚀 Astro 5
+- 🔥 Native CSS
+- 💚 Native JavaScript
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🖱️ Check out the live demo!
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+You can see the actual state of the project in this **live demostration** [here](https://otroca.dev/).
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 👨🏻‍💻 Commands available
 
-## 🧞 Commands
+### Installation
 
-All commands are run from the root of the project, from a terminal:
+Clone the repository:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+    git clone https://github.com/otrocadev/porfolio2025.git
 
-## 👀 Want to learn more?
+Navigate to the project directory:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    cd porfolio2025
+
+Install dependencies:
+
+    pnpm install
+
+Start the development server:
+
+    pnpm run dev
+
+🚀 Open your browser and visit http://localhost:4321 to view the project locally!
