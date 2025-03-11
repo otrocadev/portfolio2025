@@ -1,5 +1,5 @@
 ---
-const { metaDescription } = Astro.props
+const { metaDescription, thumbnail = '/porfolio-screenshot.avif' } = Astro.props
 ---
 
 <!doctype html>
@@ -9,7 +9,9 @@ const { metaDescription } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/otrocadev-logo.svg" />
     <meta name="description" content={metaDescription} />
-    <meta name="image" content="/porfolio-screenshot.avif" />
+    <meta name="image" content={thumbnail} />
+    <meta name="og:description" content={metaDescription} />
+    <meta name="og:image" content={thumbnail} />
     <title>otrocadev - Ot Roca's porfolio</title>
   </head>
   <body>
