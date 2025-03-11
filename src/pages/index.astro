@@ -2,9 +2,12 @@
 import Main from '../components/structure/Main.astro'
 import Header from '../components/structure/Header.astro'
 import Layout from '../layouts/Layout.astro'
+
+const metaDescription =
+  'Hi, I am Ot Roca, passionate about web development, always learning and building 🚀. I am a junior web developer, mainly Front-end. Sometimes I also do some back stuff, so I could consider myself as a Full Stack? Maybe.'
 ---
 
-<Layout>
+<Layout metaDescription={metaDescription}>
   <Header />
   <Main />
 </Layout>
