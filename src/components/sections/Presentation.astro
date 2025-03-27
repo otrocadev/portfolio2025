@@ -41,9 +41,15 @@
   }
 
   #hero {
-    margin: 0;
-    flex-wrap: wrap-reverse;
-    height: 95vh;
+      margin: 0 5rem;
+      flex-wrap: wrap-reverse;
+      min-height: 80dvh;
+      @media (min-width: 480px) {
+        margin: 0;
+      }
+      @media (min-width: 1580px) {
+        min-height: 90dvh;
+      }
   }
 
   #presentation {
