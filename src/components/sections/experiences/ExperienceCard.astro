@@ -26,6 +26,9 @@ const { title, company, location, dates, description = [] } = Astro.props
     background: var(--richblack);
     padding: 2rem;
     margin-bottom: 1rem;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
   }
 
   article:hover,
@@ -45,5 +48,16 @@ const { title, company, location, dates, description = [] } = Astro.props
 
   p {
     margin: 0.6rem 0 0 0;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 </style>
