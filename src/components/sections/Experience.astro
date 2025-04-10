@@ -28,45 +28,54 @@ const jobs = [
 ---
 
 <section id="experience">
-  <h2>Professional Experience</h2>
-  <div id="timeline">
-    <div id="bar"></div>
-    <div id="nothing"></div>
-    <ul id="jobs">
-      {
-        jobs.slice(0, -1).map((job) => (
+  <div id="experience-container">
+    <h2>Professional Experience</h2>
+    <div id="timeline">
+      <div id="bar"></div>
+      <div id="nothing"></div>
+      <ul id="jobs">
+        {
+          jobs.slice(0, -1).map((job) => (
+            <li>
+              <Icon class="li-dots" name="briefcase" />
+              <ExperienceCard
+                title={job.title}
+                company={job.company}
+                location={job.location}
+                dates={job.dates}
+                description={job.description}
+              />
+            </li>
+          ))
+        }
+      </ul>
+      <div id="last-job">
+        <ul>
           <li>
             <Icon class="li-dots" name="briefcase" />
             <ExperienceCard
-              title={job.title}
-              company={job.company}
-              location={job.location}
-              dates={job.dates}
-              description={job.description}
+              title={jobs[jobs.length - 1].title}
+              company={jobs[jobs.length - 1].company}
+              location={jobs[jobs.length - 1].location}
+              dates={jobs[jobs.length - 1].dates}
+              description={jobs[jobs.length - 1].description}
             />
           </li>
-        ))
-      }
-    </ul>
-    <div id="last-job">
-      <ul>
-        <li>
-          <Icon class="li-dots" name="briefcase" />
-          <ExperienceCard
-            title={jobs[jobs.length - 1].title}
-            company={jobs[jobs.length - 1].company}
-            location={jobs[jobs.length - 1].location}
-            dates={jobs[jobs.length - 1].dates}
-            description={jobs[jobs.length - 1].description}
-          />
-        </li>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  #experience-container {
+    @media (min-width: 480px) {
+      max-width: 1024px;
+    }
+  }
+
   #timeline {
+    margin: auto;
     width: 80%;
     display: grid;
     grid-template-areas:

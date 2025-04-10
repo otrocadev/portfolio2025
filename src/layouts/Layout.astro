@@ -42,10 +42,10 @@ import Analytics from '@vercel/analytics/astro'
     />
   </head>
   <body>
-    <slot />
-    <Analytics />
-    <body></body>
-
+    <div id="bg">
+      <slot />
+      <Analytics />
+    </div>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,700;1,700&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap');
@@ -57,6 +57,7 @@ import Analytics from '@vercel/analytics/astro'
         --slate-gray: #b4b9c0;
         --anti-flash-white: #efefef;
         --screaming-green: #4cd625;
+        --background-lines: #2e4a6620;
       }
 
       html,
@@ -67,9 +68,24 @@ import Analytics from '@vercel/analytics/astro'
         width: 100%;
         height: 100%;
         color: var(--anti-flash-white);
-        background: var(--navy);
         scroll-behavior: smooth;
         scroll-padding: 2rem;
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--navy);
+        background-image: linear-gradient(
+            to right,
+            var(--background-lines) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            var(--background-lines) 1px,
+            transparent 1px
+          );
+        background-size: 64px 64px;
       }
     </style>
   </body>

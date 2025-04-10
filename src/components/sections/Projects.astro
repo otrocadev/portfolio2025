@@ -3,33 +3,47 @@ import ProjectCard from './projects/ProjectCard.astro'
 ---
 
 <section id="projects">
-  <h2>Recent Projects</h2>
-  <div>
-    <ProjectCard
-      title="Tesla Landing Clone Page"
-      githubLink="https://github.com/otrocadev/tesla-landing-clone"
-      liveLink="https://tesla-landing.otroca.dev/"
-      imageUrl="/tesla-landing.avif"
-      techs={['astro', 'tailwind', 'vue']}
-      right
-    >
-      A clone that replicates the frontend of the Tesla.es website in orther to
-      put in practice my Astro and Tailwind knowledge
-    </ProjectCard>
-    <ProjectCard
-      title="International Converter"
-      githubLink="https://github.com/otrocadev/international-converter"
-      liveLink="https://www.internationalconverter.com/"
-      imageUrl="/international-converter.avif"
-      techs={['react', 'tailwind']}
-    >
-      International converter aims to be an ALL-IN-ONE platform to convert
-      things in a page that is very friendly and beautiful for the user.
-    </ProjectCard>
+  <div id="projects-container">
+    <h2>Recent Projects</h2>
+    <div>
+      <ProjectCard
+        title="Tesla Landing Clone Page"
+        githubLink="https://github.com/otrocadev/tesla-landing-clone"
+        liveLink="https://tesla-landing.otroca.dev/"
+        imageUrl="/tesla-landing.avif"
+        techs={['astro', 'tailwind', 'vue']}
+        right
+      >
+        A clone that replicates the frontend of the Tesla.es website in orther
+        to put in practice my Astro and Tailwind knowledge
+      </ProjectCard>
+      <ProjectCard
+        title="International Converter"
+        githubLink="https://github.com/otrocadev/international-converter"
+        liveLink="https://www.internationalconverter.com/"
+        imageUrl="/international-converter.avif"
+        techs={['react', 'tailwind']}
+      >
+        International converter aims to be an ALL-IN-ONE platform to convert
+        things in a page that is very friendly and beautiful for the user.
+      </ProjectCard>
+    </div>
   </div>
 </section>
 
 <style>
+  #projects {
+    width: 100%;
+    background: var(--navy);
+    padding-bottom: 4rem;
+    border: 2px solid var(--background-lines);
+  }
+  #projects-container {
+    @media (min-width: 480px) {
+      max-width: 1024px;
+    }
+  }
+
   div {
     display: flex;
     flex-direction: column;
