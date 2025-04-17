@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components'
     techs.map((tech: String) => (
       <div id="tech-icon">
         <Icon class="icon" name={tech} />
-        <p>{tech[0].toUpperCase() + tech.slice(1)}</p>
+        <p>{tech}</p>
       </div>
     ))
   }

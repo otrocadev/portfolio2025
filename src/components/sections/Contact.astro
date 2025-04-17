@@ -1,19 +1,28 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+import contact from '../../data/contact.ts'
+
+interface ContactInfo {
+  name: string
+  icon: string
+  link: string
+}
 ---
 
 <section id="contact">
   <h2>Let's connect!</h2>
   <div id="connect-container">
     <div id="links">
-      <a
-        href="https://www.linkedin.com/in/otrocadev/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon class="icon" name="linkedin" />
-        <h3>LinkedIn</h3>
-      </a>
+      {
+        contact.map((item: ContactInfo) => (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <Icon class="icon" name={item.icon} />
+            <h3>{item.name}</h3>
+          </a>
+        ))
+      }
+
       <a
         href="https://github.com/otrocadev"
         target="_blank"

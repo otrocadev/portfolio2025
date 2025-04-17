@@ -4,18 +4,19 @@ const {
   githubLink,
   liveLink,
   imageUrl,
-  right = false,
+  description,
   techs,
+  right = false,
 } = Astro.props
 import Tecnologies from './Tecnologies.astro'
 ---
 
 <article class={right ? 'project-card right-image' : 'project-card left-image'}>
-  <img src={imageUrl} alt=`Screenshot of the project ${title}` />
+  <img src=`/images/${imageUrl}` alt=`Screenshot of the project ${title}` />
   <div class="card-info">
     <h3>{title}</h3>
     <p>
-      <slot />
+      {description}
     </p>
     <Tecnologies techs={techs} />
     <div id="btns">
