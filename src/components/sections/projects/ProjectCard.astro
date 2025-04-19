@@ -64,8 +64,10 @@ import Tecnologies from './Tecnologies.astro'
 
   .left-image:hover,
   .left-image:active {
-    transform: rotate(-1deg) translateY(-12px) scale(1.01);
-    box-shadow: 0px 5px 10px 0px var(--seablue);
+    @media (min-width: 720px) {
+      transform: rotate(-1deg) translateY(-12px) scale(1.01);
+      box-shadow: 0px 5px 10px 0px var(--seablue);
+    }
   }
 
   .right-image {
@@ -79,8 +81,10 @@ import Tecnologies from './Tecnologies.astro'
 
   .right-image:hover,
   .right-image:active {
-    transform: rotate(1deg) translateY(-12px) scale(1.01);
-    box-shadow: 0px 5px 10px 0px var(--seablue);
+    @media (min-width: 720px) {
+      transform: rotate(1deg) translateY(-12px) scale(1.01);
+      box-shadow: 0px 5px 10px 0px var(--seablue);
+    }
   }
 
   .card-info {
