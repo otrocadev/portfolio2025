@@ -46,7 +46,7 @@ import Tecnologies from './Tecnologies.astro'
     border-radius: 1rem;
     overflow: hidden;
     grid-template-columns: 1fr;
-    grid-template-rows: 4fr 5fr;
+    grid-template-rows: 1fr auto;
     margin: auto 2rem;
     font-size: 16px;
     grid-template-areas:
@@ -54,8 +54,8 @@ import Tecnologies from './Tecnologies.astro'
       'text';
   }
   .left-image {
-    transition: all 300ms ease-in-out;
     @media (min-width: 720px) {
+      transition: all 300ms ease-in-out;
       grid-template-columns: 4fr 5fr;
       grid-template-rows: 1fr;
       grid-template-areas: 'image text';
@@ -69,8 +69,8 @@ import Tecnologies from './Tecnologies.astro'
   }
 
   .right-image {
-    transition: all 300ms ease-in-out;
     @media (min-width: 720px) {
+      transition: all 300ms ease-in-out;
       grid-template-columns: 5fr 4fr;
       grid-template-rows: 1fr;
       grid-template-areas: 'text image';
