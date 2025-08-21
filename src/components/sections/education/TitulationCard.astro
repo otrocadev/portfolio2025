@@ -1,5 +1,7 @@
 ---
-const { titulation, image } = Astro.props
+import { Icon } from 'astro-icon/components'
+
+const { titulation, entity, date, location, image } = Astro.props
 
 const imageUrl = `images/${image}`
 ---
@@ -7,6 +9,12 @@ const imageUrl = `images/${image}`
 <article>
   <img src={imageUrl} alt=`Icon representing the ${titulation}` />
   <h3>{titulation}</h3>
+  <span>{entity}</span>
+  <span>{date}</span>
+  <span>
+    <Icon name="map-pin" />
+    {location}
+  </span>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolorem,
     maiores iste quidem vero explicabo eaque et impedit nemo natus nesciunt,
@@ -19,15 +27,27 @@ const imageUrl = `images/${image}`
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 100%;
-    background: var(--seablue);
+    min-height: 90%;
+    background: var(--richblack);
     border-radius: 1rem;
     padding: 2rem;
+    border: 2px var(--seablue) solid;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 1rem 0;
+  }
+
+  span {
+    font-size: 16px;
+    color: var(--slate-gray);
+    margin-bottom: 0.4rem;
   }
 
   img {
     width: 100%;
-    max-width: 200px;
-    margin-top: -100px;
+    max-width: 150px;
+    margin-top: -80px;
   }
 </style>

@@ -1,19 +1,23 @@
 ---
 import TitulationCard from './education/TitulationCard.astro'
+import { mainEducation } from '../../data/education.ts'
 ---
 
 <section id="education">
   <div id="education-container">
     <h2>Education & Certificates</h2>
     <section id="major-education">
-      <TitulationCard
-        titulation="Bachelor’s degree in Techniques for Software Development"
-        image="bachelor-degree.avif"
-      />
-      <TitulationCard
-        titulation="IT Academy FrontEnd Bootcamp"
-        image="bootcamp.avif"
-      />
+      {
+        mainEducation.map((item) => (
+          <TitulationCard
+            titulation={item.titulation}
+            entity={item.entity}
+            date={item.date}
+            location={item.location}
+            image={item.image}
+          />
+        ))
+      }
     </section>
   </div>
 
@@ -22,6 +26,7 @@ import TitulationCard from './education/TitulationCard.astro'
       background: var(--navy);
       border: 2px solid var(--background-lines);
       width: 100%;
+      padding-bottom: 4rem;
     }
 
     #education h2 {
@@ -45,7 +50,7 @@ import TitulationCard from './education/TitulationCard.astro'
       margin-top: 0;
 
       @media (min-width: 480px) {
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 4fr 3fr;
         grid-template-rows: 1fr;
         gap: 2rem;
       }
