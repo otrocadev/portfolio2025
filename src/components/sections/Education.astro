@@ -1,0 +1,60 @@
+---
+import TitulationCard from './education/TitulationCard.astro'
+---
+
+<section id="education">
+  <div id="education-container">
+    <h2>Education & Certificates</h2>
+    <section id="major-education">
+      <TitulationCard
+        titulation="Bachelor’s degree in Techniques for Software Development"
+        image="bachelor-degree.avif"
+      />
+      <TitulationCard
+        titulation="IT Academy FrontEnd Bootcamp"
+        image="bootcamp.avif"
+      />
+    </section>
+  </div>
+
+  <style>
+    #education {
+      background: var(--navy);
+      border: 2px solid var(--background-lines);
+      width: 100%;
+    }
+
+    #education h2 {
+      text-align: center;
+      margin: 0;
+      padding: 2rem 0;
+    }
+
+    #education-container {
+      padding: 1rem;
+
+      @media (min-width: 480px) {
+        max-width: 1024px;
+      }
+    }
+
+    #major-education {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8rem;
+      margin-top: 0;
+
+      @media (min-width: 480px) {
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+  </style>
+</section>
