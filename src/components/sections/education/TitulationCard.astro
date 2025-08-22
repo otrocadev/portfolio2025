@@ -16,9 +16,7 @@ const imageUrl = `images/${image}`
     {location}
   </span>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolorem,
-    maiores iste quidem vero explicabo eaque et impedit nemo natus nesciunt,
-    officiis quos distinctio labore quis molestias aliquam ad commodi?
+    <slot />
   </p>
 </article>
 
@@ -27,11 +25,16 @@ const imageUrl = `images/${image}`
     display: flex;
     flex-direction: column;
     margin: auto;
-    min-height: 90%;
+    height: 80%;
     background: var(--richblack);
     border-radius: 1rem;
     padding: 2rem;
     border: 2px var(--seablue) solid;
+  }
+
+  article:hover,
+  article:active {
+    border-color: var(--slate-gray);
   }
 
   h3 {
