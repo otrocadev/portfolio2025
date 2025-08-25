@@ -18,3 +18,24 @@ export const mainEducation = [
       'Intensive training in Angular, TypeScript, HTML, CSS, and responsive design.',
   },
 ]
+
+export const certificates = [
+  {
+    titulation: 'Intensive Course: Design & Create your Portfolio',
+    entity: 'Nuclio Digital School, couse by Carmen Ansio',
+    date: 'Issued Feb 2025',
+    image: 'portfolio-course',
+  },
+  {
+    titulation: 'Create your own App with IA integratioon',
+    entity: 'Nuclio Digital School',
+    date: 'Issued May 2025',
+    image: 'ia-app',
+  },
+  {
+    titulation: 'JavaScript Proimises',
+    entity: 'Academia Midudev',
+    date: 'Issued May 2025',
+    image: 'certificado-promesas',
+  },
+]

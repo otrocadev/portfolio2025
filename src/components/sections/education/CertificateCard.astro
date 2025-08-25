@@ -1,0 +1,75 @@
+---
+const { titulation, entity, date, image } = Astro.props
+
+const imageUrl = `images/certificates/${image}.avif`
+---
+
+<article>
+  <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+    <img
+      id="certificate-icon"
+      src="images/certificate.avif"
+      alt="Icon representing the certificate"
+    />
+    <h3>
+      {titulation}
+    </h3>
+    <span>{entity}</span>
+    <span>{date}</span>
+    <img id="certificate-img" src={imageUrl} alt="hola" />
+  </a>
+</article>
+
+<style scoped>
+  article {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    border-radius: 1rem;
+    background: var(--richblack);
+    border: 2px var(--seablue) solid;
+    transition: all 3s ease-in-out;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  article:hover #certificate-img {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  #certificate-icon {
+    width: 100%;
+    height: auto;
+    max-width: 80px;
+    margin-top: -60px;
+  }
+
+  span {
+    font-size: 16px;
+    color: var(--slate-gray);
+    margin: 0.2rem 0;
+  }
+
+  #certificate-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    border-radius: 1rem;
+    transform: perspective(800px) rotateY(-20deg) rotateX(10deg) translateY(25%);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+</style>
