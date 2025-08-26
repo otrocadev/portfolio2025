@@ -12,7 +12,10 @@ import Tecnologies from './Tecnologies.astro'
 ---
 
 <article class={right ? 'project-card right-image' : 'project-card left-image'}>
-  <img src=`images/${imageUrl}` alt=`Screenshot of the project ${title}` />
+  <img
+    src=`images/projects/${imageUrl}.avif`
+    alt=`Screenshot of the project ${title}`
+  />
   <div class="card-info">
     <h3>{title}</h3>
     <p>
@@ -22,7 +25,7 @@ import Tecnologies from './Tecnologies.astro'
     <div id="btns">
       <a
         class="secondary-btn"
-        href={githubLink}
+        href=`https://github.com/otrocadev/${githubLink}`
         target="_blank"
         rel="noopener noreferrer">Github code</a
       >

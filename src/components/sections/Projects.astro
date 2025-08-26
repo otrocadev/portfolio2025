@@ -19,7 +19,7 @@ interface Project {
     <h2>Featured Projects</h2>
     <div>
       {
-        projectsList.map((project: Project) => (
+        projectsList.map((project: Project, index: number) => (
           <ProjectCard
             title={project.title}
             githubLink={project.githubLink}
@@ -27,7 +27,7 @@ interface Project {
             imageUrl={project.imageUrl}
             description={project.description}
             techs={project.techs}
-            right={project.right}
+            right={index % 2 !== 0}
           />
         ))
       }
