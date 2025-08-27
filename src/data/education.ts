@@ -34,8 +34,14 @@ export const certificates = [
   },
   {
     titulation: 'JavaScript Promises',
-    entity: 'Academia Midudev',
+    entity: 'Midudev Academy',
     date: 'Issued May 2025',
     image: 'certificado-promesas',
+  },
+  {
+    titulation: 'Animations with GSAP Liberary',
+    entity: 'Midudev Academy',
+    date: 'Issued Aug 2025',
+    image: 'gsap',
   },
 ]
