@@ -1,11 +1,7 @@
----
-
----
-
 <section id="hero">
   <div id="presentation">
     <span>Hello, my name is</span>
-    <h1>Ot Roca</h1>
+    <h1 class="title">Ot Roca</h1>
     <span>I am a</span>
     <h2>Frontend developer</h2>
     <span
@@ -23,8 +19,6 @@
 
 <style>
   h1 {
-    font-family: 'Anonymous Pro', serif;
-    font-weight: 700;
     font-style: normal;
     font-size: var(--font-size-2xl);
     margin: 0.6rem 0;
@@ -32,13 +26,9 @@
   }
 
   h2 {
-    font-family: 'Anonymous Pro', serif;
-    font-weight: 700;
     font-style: italic;
-    font-size: var(--font-size-xl);
     margin: 0.6rem 0;
-    text-align: start;
-    color: var(--screaming-green);
+    text-align: left;
   }
 
   span {
@@ -85,3 +75,26 @@
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap'
+  import { SplitText } from 'gsap/SplitText'
+
+  gsap.registerPlugin(SplitText)
+
+  const split = new SplitText(
+    '#presentation h1, #presentation h2, #presentation span',
+    {
+      type: 'words',
+    }
+  )
+
+  gsap.from(split.words, {
+    duration: 0.3,
+    y: 15,
+    alpha: 0,
+    stagger: 0.1,
+    filter: 'blur(4px)',
+    ease: 'power1.in',
+  })
+</script>
