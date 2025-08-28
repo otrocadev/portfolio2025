@@ -7,8 +7,11 @@
     <span
       >Passionate about web development, always learning and building 🚀</span
     >
-    <a class="primary-btn" target="_blank" href="/CV_OtRoca2025(en).pdf"
-      >Download resume</a
+    <a
+      id="download-cv"
+      class="primary-btn"
+      target="_blank"
+      href="/CV_OtRoca2025(en).pdf">Download resume</a
     >
   </div>
   <img
@@ -20,7 +23,7 @@
 <style>
   h1 {
     font-style: normal;
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-h1);
     margin: 0.6rem 0;
     color: var(--slate-gray);
   }
@@ -98,7 +101,7 @@
     ease: 'power1.in',
   })
 
-  gsap.from('#hero img, a', {
+  gsap.from('#hero img, #download-cv', {
     duration: 1,
     y: 15,
     alpha: 0,

@@ -42,15 +42,12 @@ interface Project {
     border: 2px solid var(--background-lines);
     padding-bottom: 1rem;
   }
-  #projects-container {
-    @media (min-width: 480px) {
-      max-width: 1024px;
-    }
-  }
 
   div {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 8vw, 4rem);
   }
 </style>

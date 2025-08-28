@@ -46,18 +46,24 @@ import Tecnologies from './Tecnologies.astro'
     display: grid;
     background: var(--richblack);
     border: 2px var(--seablue) solid;
-
     grid-template-rows: 1fr 1fr;
     border-radius: 1rem;
     overflow: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     margin: auto 2rem;
-    font-size: 16px;
     grid-template-areas:
       'image'
       'text';
+
+    @media (min-width: 1024px) {
+      max-width: 70%;
+    }
+    @media (min-width: 1280px) {
+      max-width: 60%;
+    }
   }
+
   .left-image {
     @media (min-width: 720px) {
       transition: all 300ms ease-in-out;

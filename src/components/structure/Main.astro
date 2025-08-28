@@ -46,13 +46,18 @@ import Education from '../sections/Education.astro'
 
   h2 {
     font-size: 40px;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-h2);
     text-align: center;
   }
 
   h3 {
-    font-size: 28px;
+    font-size: var(--font-size-h3);
     margin: 0;
+  }
+
+  p,
+  span {
+    font-size: var(--font-size-md);
   }
 
   a {
@@ -61,10 +66,11 @@ import Education from '../sections/Education.astro'
     font-size: var(--font-size-ms);
     font-weight: 700;
     text-decoration: none;
-    padding: 0.6rem 1rem;
+    padding: var(--button-padding);
     border-radius: 0.4rem;
     transition: transform 0.3s ease;
   }
+
   .primary-btn {
     font-family: 'Anonymous Pro', serif;
     width: fit-content;
@@ -72,7 +78,6 @@ import Education from '../sections/Education.astro'
     background: var(--screaming-green);
     font-weight: 700;
     text-decoration: none;
-    padding: 0.6rem 1rem;
     border-radius: 0.4rem;
     border: 2px var(--screaming-green) solid;
     transition: transform 0.3s ease;
