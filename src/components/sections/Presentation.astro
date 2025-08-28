@@ -8,7 +8,9 @@
     <h1>Ot Roca</h1>
     <span>I am a</span>
     <h2>Frontend developer</h2>
-    <p>Passionate about web development, always learning and building 🚀</p>
+    <span
+      >Passionate about web development, always learning and building 🚀</span
+    >
     <a class="primary-btn" target="_blank" href="/CV_OtRoca2025(en).pdf"
       >Download resume</a
     >
@@ -24,34 +26,39 @@
     font-family: 'Anonymous Pro', serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 48px;
+    font-size: clamp(48px, 8vw, 144px);
     margin: 0.6rem 0;
     color: var(--slate-gray);
-    @media (min-width: 480px) {
-      font-size: 72px;
-    }
   }
 
   h2 {
     font-family: 'Anonymous Pro', serif;
     font-weight: 700;
     font-style: italic;
-    font-size: 36px;
+    font-size: clamp(28px, 6vw, 96px);
     margin: 0.6rem 0;
     text-align: start;
     color: var(--screaming-green);
-    @media (min-width: 480px) {
-      font-size: 48px;
-    }
+  }
+
+  span {
+    font-size: clamp(20px, 2vw, 22px);
+    color: var(--slate-gray);
+  }
+
+  a {
+    margin-top: 1.5rem;
   }
 
   #hero {
-    margin: 2rem 5rem;
+    margin: 2rem;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     min-height: 95dvh;
     @media (min-width: 720px) {
       margin: 0;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -61,8 +68,8 @@
       margin: 0 auto;
       max-width: 100%;
       @media (min-width: 480px) {
-        max-width: 400px;
         width: 100%;
+        max-width: 600px;
       }
     }
   }
@@ -71,15 +78,9 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    max-width: 400px;
-  }
-
-  img {
-    mask-image: linear-gradient(black 80%, transparent);
-    position: relative;
-    width: 100%;
-    @media (min-width: 480px) {
-      width: auto;
+    justify-self: end;
+    @media (min-width: 720px) {
+      margin-left: clamp(1rem, 8vw, 20rem);
     }
   }
 </style>
