@@ -29,7 +29,7 @@
 
 <style>
   h2 {
-    font-size: 32px;
+    font-size: clamp(20px, 2vw, 48px);
     margin: 0 1rem;
   }
 
@@ -44,6 +44,7 @@
     box-sizing: border-box;
     z-index: 2;
     border-bottom: 2px solid var(--background-lines);
+    max-width: 3840px;
   }
 
   #header-wrapper {
@@ -60,7 +61,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   #logo-wrapper:hover,
@@ -83,7 +84,7 @@
     display: flex;
     list-style: none;
     gap: 2rem;
-    font-size: 20px;
+    font-size: clamp(20px, 2vw, 48px);
     font-weight: 700;
   }
 
