@@ -29,13 +29,13 @@
 
 <style>
   h2 {
-    font-size: 32px;
+    font-size: clamp(20px, 1.2vw, 48px);
     margin: 0 1rem;
   }
 
   header {
     width: 100%;
-    height: 5vh;
+    height: 6vh;
     min-height: 60px;
     position: fixed;
     display: flex;
@@ -44,13 +44,14 @@
     box-sizing: border-box;
     z-index: 2;
     border-bottom: 2px solid var(--background-lines);
+    max-width: 3840px;
   }
 
   #header-wrapper {
     margin: auto;
     height: 100%;
     width: 100%;
-    max-width: 1024px;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,7 +61,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   #logo-wrapper:hover,
@@ -83,7 +84,7 @@
     display: flex;
     list-style: none;
     gap: 2rem;
-    font-size: 20px;
+    font-size: clamp(20px, 1.2vw, 48px);
     font-weight: 700;
   }
 

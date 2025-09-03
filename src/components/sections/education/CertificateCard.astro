@@ -4,7 +4,7 @@ const { titulation, entity, date, image } = Astro.props
 const imageUrl = `images/certificates/${image}.avif`
 ---
 
-<article>
+<article class="certificate-card">
   <a href={imageUrl} target="_blank" rel="noopener noreferrer">
     <img
       id="certificate-icon"
@@ -16,7 +16,12 @@ const imageUrl = `images/certificates/${image}.avif`
     </h3>
     <span>{entity}</span>
     <span>{date}</span>
-    <img id="certificate-img" src={imageUrl} alt="hola" />
+    <!-- pending hover effect to show the certificate better -->
+    <!--<img
+      id="certificate-img"
+      src={imageUrl}
+      alt=`Titulation that acredites that Ot Roca (otrocadev) obtained the certificate ${titulation}`
+    /> -->
   </a>
 </article>
 
@@ -31,7 +36,6 @@ const imageUrl = `images/certificates/${image}.avif`
     border-radius: 1rem;
     background: var(--richblack);
     border: 2px var(--seablue) solid;
-    transition: all 3s ease-in-out;
   }
 
   a {
@@ -41,16 +45,19 @@ const imageUrl = `images/certificates/${image}.avif`
     padding: 2rem;
   }
 
-  article:hover #certificate-img {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-
   #certificate-icon {
     width: 100%;
     height: auto;
     max-width: 80px;
     margin-top: -60px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 0.4rem 0;
+    @media (max-width: 720px) {
+      font-size: 16px;
+    }
   }
 
   span {
@@ -67,9 +74,7 @@ const imageUrl = `images/certificates/${image}.avif`
     bottom: 0;
     right: 0;
     object-fit: cover;
+    opacity: 1;
     border-radius: 1rem;
-    transform: perspective(800px) rotateY(-20deg) rotateX(10deg) translateY(25%);
-    opacity: 0;
-    transition: all 1s ease-in-out;
   }
 </style>

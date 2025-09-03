@@ -1,57 +1,58 @@
----
-
----
-
 <section id="hero">
   <div id="presentation">
     <span>Hello, my name is</span>
-    <h1>Ot Roca</h1>
+    <h1 class="title">Ot Roca</h1>
     <span>I am a</span>
     <h2>Frontend developer</h2>
-    <p>Passionate about web development, always learning and building 🚀</p>
-    <a class="primary-btn" target="_blank" href="/CV_OtRoca2025(en).pdf"
-      >Download resume</a
+    <span
+      >Passionate about web development, always learning and building 🚀</span
+    >
+    <a
+      id="download-cv"
+      class="primary-btn"
+      target="_blank"
+      href="/CV_OtRoca2025(en).pdf">Download resume</a
     >
   </div>
   <img
     src="images/software-engineer.avif"
-    alt="A drawing with some common software engineer tools, there can be seen a screen with code with a mouse and a keyboard, with a cofee cup"
+    alt="A drawing with some common software engineer tools used by Ot Roca, there can be seen a screen with code with a mouse and a keyboard, with a cofee cup"
   />
 </section>
 
 <style>
   h1 {
-    font-family: 'Anonymous Pro', serif;
-    font-weight: 700;
     font-style: normal;
-    font-size: 48px;
+    font-size: var(--font-size-h1);
     margin: 0.6rem 0;
     color: var(--slate-gray);
-    @media (min-width: 480px) {
-      font-size: 72px;
-    }
   }
 
   h2 {
-    font-family: 'Anonymous Pro', serif;
-    font-weight: 700;
     font-style: italic;
-    font-size: 36px;
     margin: 0.6rem 0;
-    text-align: start;
-    color: var(--screaming-green);
-    @media (min-width: 480px) {
-      font-size: 48px;
-    }
+    text-align: left;
+  }
+
+  span {
+    font-size: var(--font-size-md);
+    color: var(--slate-gray);
+  }
+
+  a {
+    margin-top: 1.5rem;
   }
 
   #hero {
-    margin: 0 5rem;
+    margin: 2rem;
+    width: 100%;
+    max-width: 3840px;
     display: flex;
     flex-direction: column-reverse;
     min-height: 95dvh;
-    @media (min-width: 480px) {
+    @media (min-width: 720px) {
       margin: 0;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -60,9 +61,9 @@
       align-self: center;
       margin: 0 auto;
       max-width: 100%;
-      @media (min-width: 480px) {
-        max-width: 400px;
+      @media (min-width: 720px) {
         width: 100%;
+        max-width: 35vw;
       }
     }
   }
@@ -70,16 +71,40 @@
   #presentation {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    max-width: 400px;
-  }
-
-  img {
-    mask-image: linear-gradient(black 80%, transparent);
-    position: relative;
-    width: 100%;
-    @media (min-width: 480px) {
-      width: auto;
+    padding: 2rem;
+    justify-self: end;
+    @media (min-width: 720px) {
+      margin-left: clamp(1rem, 8vw, 20rem);
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap'
+  import { SplitText } from 'gsap/SplitText'
+
+  gsap.registerPlugin(SplitText)
+
+  const split = new SplitText(
+    '#presentation h1, #presentation h2, #presentation span',
+    {
+      type: 'words',
+    }
+  )
+
+  gsap.from(split.words, {
+    duration: 0.3,
+    y: 15,
+    autoAlpha: 0,
+    stagger: 0.1,
+    filter: 'blur(4px)',
+    ease: 'power1.in',
+  })
+
+  gsap.from('#hero img, #download-cv', {
+    duration: 1,
+    y: 15,
+    autoAlpha: 0,
+    ease: 'power1.in',
+  })
+</script>

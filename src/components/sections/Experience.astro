@@ -25,6 +25,7 @@ interface Job {
             <li>
               <Icon class="li-dots" name="briefcase" />
               <ExperienceCard
+                class="job-card"
                 title={job.title}
                 company={job.company}
                 location={job.location}
@@ -56,7 +57,7 @@ interface Job {
 <style>
   #experience-container {
     @media (min-width: 480px) {
-      max-width: 1024px;
+      max-width: var(--max-screen-width);
     }
   }
 
@@ -92,12 +93,15 @@ interface Job {
       display: block;
     }
   }
+
   #jobs {
     grid-area: jobs;
   }
+
   #last-job {
     grid-area: last-job;
   }
+
   #nothing {
     grid-area: nothing;
     width: 4px;
@@ -113,3 +117,24 @@ interface Job {
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.from('.job-card', {
+    duration: 1,
+    x: 800,
+    autoAlpha: 0,
+    stagger: 1,
+    ease: 'power2.out',
+    scrollTrigger: {
+      scrub: true,
+      trigger: '.job-card',
+      start: 'top 90%',
+      end: 'bottom 60%',
+    },
+  })
+</script>

@@ -19,7 +19,7 @@ interface Project {
     <h2>Featured Projects</h2>
     <div>
       {
-        projectsList.map((project: Project) => (
+        projectsList.map((project: Project, index: number) => (
           <ProjectCard
             title={project.title}
             githubLink={project.githubLink}
@@ -27,7 +27,7 @@ interface Project {
             imageUrl={project.imageUrl}
             description={project.description}
             techs={project.techs}
-            right={project.right}
+            right={index % 2 !== 0}
           />
         ))
       }
@@ -39,18 +39,15 @@ interface Project {
   #projects {
     width: 100%;
     background: var(--navy);
-    padding-bottom: 4rem;
     border: 2px solid var(--background-lines);
-  }
-  #projects-container {
-    @media (min-width: 480px) {
-      max-width: 1024px;
-    }
+    padding-bottom: 1rem;
   }
 
   div {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 8vw, 4rem);
   }
 </style>

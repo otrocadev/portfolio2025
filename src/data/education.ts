@@ -27,15 +27,21 @@ export const certificates = [
     image: 'portfolio-course',
   },
   {
-    titulation: 'Create your own App with IA integratioon',
+    titulation: 'Create your own App with IA integration',
     entity: 'Nuclio Digital School',
     date: 'Issued May 2025',
     image: 'ia-app',
   },
   {
-    titulation: 'JavaScript Proimises',
-    entity: 'Academia Midudev',
+    titulation: 'JavaScript Promises',
+    entity: 'Midudev Academy',
     date: 'Issued May 2025',
     image: 'certificado-promesas',
+  },
+  {
+    titulation: 'Animations with GSAP Liberary',
+    entity: 'Midudev Academy',
+    date: 'Issued Aug 2025',
+    image: 'gsap',
   },
 ]
