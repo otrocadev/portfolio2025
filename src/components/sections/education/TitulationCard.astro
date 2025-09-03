@@ -6,7 +6,7 @@ const { titulation, entity, date, location, image } = Astro.props
 const imageUrl = `images/${image}`
 ---
 
-<article>
+<article class="titulation-card">
   <img src={imageUrl} alt=`Icon representing the ${titulation}` />
   <h3>{titulation}</h3>
   <span>{entity}</span>

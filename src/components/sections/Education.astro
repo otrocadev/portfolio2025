@@ -87,3 +87,37 @@ import { mainEducation, certificates } from '../../data/education.ts'
     }
   </style>
 </section>
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.from('.titulation-card', {
+    duration: 1,
+    y: 50,
+    autoAlpha: 0,
+    stagger: 0.3,
+    ease: 'power2.out',
+    scrollTrigger: {
+      scrub: true,
+      trigger: '#major-education',
+      start: 'top 80%',
+      end: 'bottom 60%',
+    },
+  })
+
+  gsap.from('.certificate-card', {
+    duration: 0.3,
+    y: 50,
+    autoAlpha: 0,
+    stagger: 0.1,
+    ease: 'power2.out',
+    scrollTrigger: {
+      scrub: true,
+      trigger: '#certificates',
+      start: 'top 90%',
+      end: 'bottom 95%',
+    },
+  })
+</script>
