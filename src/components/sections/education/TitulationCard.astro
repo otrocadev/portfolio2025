@@ -9,8 +9,14 @@ const imageUrl = `images/${image}`
 <article class="titulation-card">
   <img src={imageUrl} alt=`Icon representing the ${titulation}` />
   <h3>{titulation}</h3>
-  <span>{entity}</span>
-  <span>{date}</span>
+  <span>
+    <Icon name="school" class="icon" />
+    {entity}</span
+  >
+  <span>
+    <Icon name="calendar" />
+    {date}</span
+  >
   <span>
     <Icon name="map-pin" />
     {location}

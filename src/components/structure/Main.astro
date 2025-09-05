@@ -16,9 +16,6 @@ import Education from '../sections/Education.astro'
 
 <style is:global>
   main {
-    font-family: 'Gudea', Inter, Roboto, 'Helvetica Neue', 'Arial Nova',
-      'Nimbus Sans', Arial, sans-serif;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,21 +23,12 @@ import Education from '../sections/Education.astro'
     margin: auto;
   }
 
-  section {
-    margin: 1rem;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
   h1,
   h2,
   h3 {
     color: var(--screaming-green);
-    font-family: 'Anonymous Pro', serif;
-    font-weight: 700;
+    font-family: 'Raleway', serif;
+    font-weight: 800;
     font-style: normal;
   }
 
@@ -60,11 +48,20 @@ import Education from '../sections/Education.astro'
     font-size: var(--font-size-md);
   }
 
+  section {
+    margin: 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   a {
-    font-family: 'Anonymous Pro', serif;
+    font-family: 'Raleway', serif;
     width: fit-content;
     font-size: var(--font-size-ms);
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     padding: var(--button-padding);
     border-radius: 0.4rem;
@@ -72,11 +69,10 @@ import Education from '../sections/Education.astro'
   }
 
   .primary-btn {
-    font-family: 'Anonymous Pro', serif;
     width: fit-content;
     color: var(--richblack);
     background: var(--screaming-green);
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     border-radius: 0.4rem;
     border: 2px var(--screaming-green) solid;

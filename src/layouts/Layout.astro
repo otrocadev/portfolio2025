@@ -46,6 +46,20 @@ import Analytics from '@vercel/analytics/astro'
       name="twitter:image"
       content="https://otroca.dev/porfolio-screenshot.avif"
     />
+    <link
+      rel="preload"
+      href="/fonts/Raleway-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inconsolata.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
   </head>
   <body>
     <div id="bg">
@@ -53,8 +67,21 @@ import Analytics from '@vercel/analytics/astro'
       <Analytics />
     </div>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,700;1,700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap');
+      @font-face {
+        font-family: 'Raleway';
+        src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Inconsolata';
+        src: url('/fonts/Inconsolata.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
 
       :root {
         --richblack: #000e22;
@@ -70,6 +97,7 @@ import Analytics from '@vercel/analytics/astro'
         --font-size-h3: clamp(24px, 1.8vw, 48px);
         --font-size-md: clamp(16px, 0.8vw, 28px);
         --font-size-ms: clamp(16px, 0.8vw, 28px);
+        --font-size-xs: clamp(12px, 0.4vw, 16px);
 
         --button-padding: clamp(0.6rem, 0.75vw, 1.7rem)
           clamp(1.2rem, 1.5vw, 3rem);
@@ -81,8 +109,8 @@ import Analytics from '@vercel/analytics/astro'
 
       html,
       body {
-        font-family: 'Gudea', Inter, Roboto, 'Helvetica Neue', 'Arial Nova',
-          'Nimbus Sans', Arial, sans-serif;
+        font-family: 'Inconsolata', Inter, Roboto, 'Helvetica Neue',
+          'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         margin: 0;
         width: 100%;
         height: 100%;
