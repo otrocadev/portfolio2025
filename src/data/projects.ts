@@ -9,7 +9,7 @@ const projectsList = [
     techs: ['React', 'Tailwind'],
   },
   {
-    title: 'Basic e-comerce frontend',
+    title: 'IT Academy e-comerce frontend',
     githubLink: 'ita-sprint-2-frontend-eshop',
     liveLink: 'https://sprint2-frontend-shop.vercel.app/',
     imageUrl: 'eshop',
@@ -23,7 +23,7 @@ const projectsList = [
     liveLink: 'https://javascript100.otroca.dev/',
     imageUrl: 'javascript100',
     description:
-      'A clone that replicates the frontend of the Tesla.es website in orther to put in practice my Astro and Tailwind knowledge',
+      'A collection of basic projects that use 100% Vanilla web technologies.',
     techs: ['HTML', 'CSS', 'JavaScript'],
   },
   {
@@ -32,7 +32,7 @@ const projectsList = [
     liveLink: 'https://tesla-landing.otroca.dev/',
     imageUrl: 'tesla-landing',
     description:
-      'A clone that replicates the frontend of the Tesla.es website in orther to put in practice my Astro and Tailwind knowledge',
+      'A clone that replicates the frontend of the Tesla.es website in orther to put in practice my Astro and Tailwind knowledge.',
     techs: ['Astro', 'Tailwind', 'Vue'],
   },
 ]
