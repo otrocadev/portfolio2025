@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 const { titulation, entity, date, image } = Astro.props
 
 const imageUrl = `images/certificates/${image}.avif`
@@ -14,8 +16,14 @@ const imageUrl = `images/certificates/${image}.avif`
     <h3>
       {titulation}
     </h3>
-    <span>{entity}</span>
-    <span>{date}</span>
+    <span>
+      <Icon name="school" class="icon" />
+      {entity}
+    </span>
+    <span>
+      <Icon name="calendar" class="icon" />
+      {date}</span
+    >
     <!-- pending hover effect to show the certificate better -->
     <!--<img
       id="certificate-img"
@@ -62,6 +70,11 @@ const imageUrl = `images/certificates/${image}.avif`
 
   span {
     font-size: 16px;
+    gap: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Inconsolata', monospace, serif;
     color: var(--slate-gray);
     margin: 0.2rem 0;
   }
