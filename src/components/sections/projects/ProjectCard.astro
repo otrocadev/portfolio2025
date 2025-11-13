@@ -11,31 +11,43 @@ const {
 import Tecnologies from './Tecnologies.astro'
 ---
 
-<article class={right ? 'project-card right-image' : 'project-card left-image'}>
-  <img
-    src=`images/projects/${imageUrl}.avif`
-    alt=`Screenshot of the project ${title} by Ot Roca, also known as otrocadev`
-  />
+<article class="project-card">
+  <a
+    class="image-wrapper"
+    href=`https://github.com/otrocadev/${githubLink}`
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="image-project"
+      src=`images/projects/${imageUrl}.avif`
+      alt=`Screenshot of the project ${title} by Ot Roca, also known as otrocadev`
+    />
+  </a>
   <div class="card-info">
     <h3>{title}</h3>
     <p>
       {description}
     </p>
-    <Tecnologies techs={techs} />
+    {githubLink && (
+      <Tecnologies techs={techs} />
+    )}
     <div id="btns">
-      <a
-        class="secondary-btn"
-        href=`https://github.com/otrocadev/${githubLink}`
-        target="_blank"
-        rel="noopener noreferrer">Github code</a
-      >
+      {githubLink && (
+        <a
+          class="secondary-btn"
+          href=`https://github.com/otrocadev/${githubLink}`
+          target="_blank"
+          rel="noopener noreferrer">Github code</a
+        >
+      )}
       <a
         class="primary-btn"
         href={liveLink}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Live demo
+        { githubLink ? 'Live demo' : 'Check out my GitHub!'}
       </a>
     </div>
   </div>
@@ -46,13 +58,15 @@ import Tecnologies from './Tecnologies.astro'
     display: grid;
     background: var(--richblack);
     border: 2px var(--seablue) solid;
-    grid-template-rows: 1fr 1fr;
     border-radius: 1rem;
     overflow: hidden;
     position: relative;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-    margin: auto 2rem;
+    grid-template-rows: 300px auto;
+    height: 100%;
+    min-height: 600px;
+    margin: 0;
+    transition: all 300ms ease-in-out;
     grid-template-areas:
       'image'
       'text';
@@ -68,57 +82,42 @@ import Tecnologies from './Tecnologies.astro'
     }
   }
 
-  .left-image {
-    @media (min-width: 720px) {
-      transition: all 300ms ease-in-out;
-      grid-template-columns: 4fr 5fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: 'image text';
-    }
+  .project-card:hover,
+  .project-card:active {
+    transform: translateY(-12px) scale(1.01) rotate(1deg);
+    transition: all 300ms ease-in-out;
+    box-shadow: 0px 5px 10px 0px var(--seablue);
   }
 
-  .left-image:hover,
-  .left-image:active {
-    @media (min-width: 720px) {
-      transform: rotate(-1deg) translateY(-12px) scale(1.01);
-      box-shadow: 0px 5px 10px 0px var(--seablue);
-    }
-  }
+  .image-wrapper {
+    height: 300px;
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
 
-  .right-image {
-    @media (min-width: 720px) {
-      transition: all 300ms ease-in-out;
-      grid-template-columns: 5fr 4fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: 'text image';
-    }
-  }
-
-  .right-image:hover,
-  .right-image:active {
-    @media (min-width: 720px) {
-      transform: rotate(1deg) translateY(-12px) scale(1.01);
-      box-shadow: 0px 5px 10px 0px var(--seablue);
+    .image-project {
+      width: 100%;
+      object-fit: cover;
     }
   }
 
   .card-info {
     grid-area: text;
     margin: 1.6rem;
+    display: flex;
+    flex-direction: column;
     @media (min-width: 720px) {
-      margin: 3rem;
+      margin: 2rem;
     }
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    grid-area: image;
-  }
-
   #btns {
-    margin: 1rem auto;
+    margin-top: auto;
+    padding-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
