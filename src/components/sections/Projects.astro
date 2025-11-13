@@ -5,19 +5,18 @@ import projectsList from '../../data/projects.ts'
 
 interface Project {
   title: string
-  githubLink: string
+  githubLink?: string
   liveLink: string
   imageUrl: string
   description: string
-  techs: Array<string>
-  right?: boolean
+  techs?: Array<string>
 }
 ---
 
 <section id="projects">
   <div id="projects-container">
     <h2>Featured Projects</h2>
-    <div>
+    <div id="project-cards-wrapper">
       {
         projectsList.map((project: Project) => (
           <ProjectCard
@@ -27,7 +26,6 @@ interface Project {
             imageUrl={project.imageUrl}
             description={project.description}
             techs={project.techs}
-            right={project.right}
           />
         ))
       }
@@ -48,9 +46,17 @@ interface Project {
     }
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
+  #projects-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  #project-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 </style>
