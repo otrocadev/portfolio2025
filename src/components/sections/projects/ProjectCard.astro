@@ -14,7 +14,7 @@ import Tecnologies from './Tecnologies.astro'
 <article class="project-card">
   <a
     class="image-wrapper"
-    href=`https://github.com/otrocadev/${githubLink}`
+    href={liveLink ? liveLink : `https://github.com/otrocadev/${githubLink}`}
     target="_blank"
     rel="noopener noreferrer"
   >
