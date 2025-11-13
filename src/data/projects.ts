@@ -9,15 +9,6 @@ const projectsList = [
     techs: ['Angular', 'CSS', 'TypeScript'],
   },
   {
-    title: 'IT Academy e-comerce frontend',
-    githubLink: 'ita-sprint-2-frontend-eshop',
-    liveLink: 'https://sprint2-frontend-shop.vercel.app/',
-    imageUrl: 'eshop',
-    description:
-      'A web application initial demo version of an eshop application for a client: management of the shopping cart and the application of the promotions on the final price.',
-    techs: ['HTML', 'CSS', 'JavaScript'],
-  },
-  {
     title: '100 JavaScript projets',
     githubLink: 'javascript-100',
     liveLink: 'https://javascript100.otroca.dev/',
