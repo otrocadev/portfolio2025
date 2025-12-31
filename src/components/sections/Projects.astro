@@ -1,7 +1,22 @@
 ---
 import ProjectCard from './projects/ProjectCard.astro'
 
-import projectsList from '../../data/projects.ts'
+const query = `*[_type=="project"] | order(_updatedAt desc){
+  title,
+  description,
+  liveLink,
+  githubLink,
+  techs,
+  "imageUrl": projectThumbnail.asset->url
+}`
+
+const data = await fetch(
+  `https://5w2kjkn9.api.sanity.io/v1/data/query/production?query=${encodeURIComponent(query)}`
+).then((res) => res.json())
+
+console.log(data)
+
+const projectsList = data.result
 
 interface Project {
   title: string
