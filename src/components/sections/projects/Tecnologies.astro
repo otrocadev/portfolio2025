@@ -4,10 +4,10 @@ const { techs = [] } = Astro.props
 import { Icon } from 'astro-icon/components'
 ---
 
-<div id="techs-wrapper">
+<div class="techs-wrapper">
   {
     techs.map((tech: String) => (
-      <div id="tech-icon">
+      <div class="tech-icon">
         <Icon class="icon" name={tech} />
         <p>{tech}</p>
       </div>
@@ -16,13 +16,13 @@ import { Icon } from 'astro-icon/components'
 </div>
 
 <style>
-  #techs-wrapper {
-    display: flex;
+  .techs-wrapper {
+    display: inline-flex;
     flex-wrap: wrap;
     gap: 0.6rem;
   }
 
-  #tech-icon {
+  .tech-icon {
     font-family: 'Raleway', serif;
     font-weight: 600;
     font-size: 0.6rem;
@@ -30,9 +30,9 @@ import { Icon } from 'astro-icon/components'
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.6rem;
     background: var(--seablue);
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
   }
 
   .icon {
