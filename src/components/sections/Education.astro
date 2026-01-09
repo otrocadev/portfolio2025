@@ -4,7 +4,7 @@ import CertificateCard from './education/CertificateCard.astro'
 import { mainEducation, certificates } from '../../data/education.ts'
 import { sanityUrl } from '../../lib/sanity.ts'
 
-const query = `*[_type=="education"] | order(_updatedAt desc){
+const educationQuery = `*[_type=="education"] | order(_updatedAt desc){
   titulation,
   entity,
   date,
@@ -13,11 +13,22 @@ const query = `*[_type=="education"] | order(_updatedAt desc){
   "imageUrl": image.asset->url
 }`
 
-const data = await fetch(
-  `${sanityUrl}?query=${encodeURIComponent(query)}`
+const certificatesQuery = `*[_type=="certificate"] | order(_updatedAt desc){
+  titulation,
+  entity,
+  date
+}`
+
+const educationData = await fetch(
+  `${sanityUrl}?query=${encodeURIComponent(educationQuery)}`
 ).then((res) => res.json())
 
-const educationList = data.result
+const certificatesData = await fetch(
+  `${sanityUrl}?query=${encodeURIComponent(certificatesQuery)}`
+).then((res) => res.json())
+
+const educationList = educationData.result
+const certificatesList = certificatesData.result
 
 interface Education {
   titulation: string
@@ -26,6 +37,12 @@ interface Education {
   location: string
   description: string
   imageUrl: string
+}
+
+interface Certificate {
+  titulation: string
+  entity: string
+  date: string
 }
 ---
 
@@ -49,12 +66,11 @@ interface Education {
     </div>
     <div id="certificates">
       {
-        certificates.map((item) => (
+        certificatesList.map((certificate: Certificate, index: number) => (
           <CertificateCard
-            titulation={item.titulation}
-            entity={item.entity}
-            date={item.date}
-            image={item.image}
+            titulation={certificate.titulation}
+            entity={certificate.entity}
+            date={certificate.date}
           />
         ))
       }
