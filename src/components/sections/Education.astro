@@ -1,7 +1,6 @@
 ---
 import TitulationCard from './education/TitulationCard.astro'
 import CertificateCard from './education/CertificateCard.astro'
-import { mainEducation, certificates } from '../../data/education.ts'
 import { sanityUrl } from '../../lib/sanity.ts'
 
 const educationQuery = `*[_type=="education"] | order(_updatedAt desc){

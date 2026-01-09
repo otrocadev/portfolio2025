@@ -1,8 +1,21 @@
 ---
 import { Icon } from 'astro-icon/components'
 import ExperienceCard from './experiences/ExperienceCard.astro'
+import { sanityUrl } from '../../lib/sanity.ts'
 
-import jobs from '../../data/jobs.ts'
+const jobsQuery = `*[_type=="job"] | order(_updatedAt desc){
+  title,
+  company,
+  location,
+  dates,
+  description,
+}`
+
+const jobsData = await fetch(
+  `${sanityUrl}?query=${encodeURIComponent(jobsQuery)}`
+).then((res) => res.json())
+
+const jobsList = jobsData.result
 
 interface Job {
   title: string
@@ -21,7 +34,7 @@ interface Job {
       <div id="nothing"></div>
       <ul id="jobs">
         {
-          jobs.slice(0, -1).map((job: Job) => (
+          jobsList.slice(0, -1).map((job: Job) => (
             <li>
               <Icon class="li-dots" name="briefcase" />
               <ExperienceCard
@@ -41,11 +54,11 @@ interface Job {
           <li>
             <Icon class="li-dots" name="briefcase" />
             <ExperienceCard
-              title={jobs[jobs.length - 1].title}
-              company={jobs[jobs.length - 1].company}
-              location={jobs[jobs.length - 1].location}
-              dates={jobs[jobs.length - 1].dates}
-              description={jobs[jobs.length - 1].description}
+              title={jobsList[jobsList.length - 1].title}
+              company={jobsList[jobsList.length - 1].company}
+              location={jobsList[jobsList.length - 1].location}
+              dates={jobsList[jobsList.length - 1].dates}
+              description={jobsList[jobsList.length - 1].description}
             />
           </li>
         </ul>

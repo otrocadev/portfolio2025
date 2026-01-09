@@ -7,7 +7,7 @@ const imageUrl = `images/certificates/${image}.avif`
 ---
 
 <article class="certificate-card">
-  <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+  <div>
     <img
       id="certificate-icon"
       src="images/certificate.avif"
@@ -24,7 +24,7 @@ const imageUrl = `images/certificates/${image}.avif`
       <Icon name="calendar" class="icon" />
       {date}</span
     >
-  </a>
+  </div>
 </article>
 
 <style scoped>
@@ -40,7 +40,7 @@ const imageUrl = `images/certificates/${image}.avif`
     border: 2px var(--seablue) solid;
   }
 
-  a {
+  div {
     display: flex;
     flex-direction: column;
     width: 100%;
