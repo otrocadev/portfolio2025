@@ -1,5 +1,6 @@
 ---
 import ProjectCard from './projects/ProjectCard.astro'
+import { sanityUrl } from '../../lib/sanity.ts'
 
 const query = `*[_type=="project"] | order(_updatedAt desc){
   title,
@@ -11,10 +12,8 @@ const query = `*[_type=="project"] | order(_updatedAt desc){
 }`
 
 const data = await fetch(
-  `https://5w2kjkn9.api.sanity.io/v1/data/query/production?query=${encodeURIComponent(query)}`
+  `${sanityUrl}?query=${encodeURIComponent(query)}`
 ).then((res) => res.json())
-
-console.log(data)
 
 const projectsList = data.result
 

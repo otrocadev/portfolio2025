@@ -2,6 +2,31 @@
 import TitulationCard from './education/TitulationCard.astro'
 import CertificateCard from './education/CertificateCard.astro'
 import { mainEducation, certificates } from '../../data/education.ts'
+import { sanityUrl } from '../../lib/sanity.ts'
+
+const query = `*[_type=="education"] | order(_updatedAt desc){
+  titulation,
+  entity,
+  date,
+  location,
+  description,
+  "imageUrl": image.asset->url
+}`
+
+const data = await fetch(
+  `${sanityUrl}?query=${encodeURIComponent(query)}`
+).then((res) => res.json())
+
+const educationList = data.result
+
+interface Education {
+  titulation: string
+  entity: string
+  date: string
+  location: string
+  description: string
+  imageUrl: string
+}
 ---
 
 <section id="education">
@@ -9,15 +34,15 @@ import { mainEducation, certificates } from '../../data/education.ts'
     <h2>Education & Certificates</h2>
     <div id="major-education">
       {
-        mainEducation.map((item) => (
+        educationList.map((education: Education, index: number) => (
           <TitulationCard
-            titulation={item.titulation}
-            entity={item.entity}
-            date={item.date}
-            location={item.location}
-            image={item.image}
+            titulation={education.titulation}
+            entity={education.entity}
+            date={education.date}
+            location={education.location}
+            imageUrl={education.imageUrl}
           >
-            {item.description}
+            {education.description}
           </TitulationCard>
         ))
       }
