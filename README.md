@@ -1,6 +1,6 @@
 # Porfolio Ot Roca [@otrocadev]
 
-![Ot Roca - otrocadev porfolio screenshot](/public/porfolio-screenshot.avif)
+![Ot Roca - otrocadev porfolio screenshot](/public/porfolio-screenshot.jpeg)
 
 This is the repo for my updated porfolio for 2025! This time I have created a more simplified interface that has just the basic information to avoid distractions and have a cleaner look.
 
