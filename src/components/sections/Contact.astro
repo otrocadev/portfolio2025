@@ -11,29 +11,61 @@ interface ContactInfo {
 ---
 
 <section id="contact">
-  <h2>Let's connect!</h2>
-  <div id="connect-container">
-    <div id="links">
-      {
-        contact.map((item: ContactInfo) => (
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
-            <Icon class="icon" name={item.icon} />
-            <h3>{item.name}</h3>
-          </a>
-        ))
-      }
+  <h2>About me</h2>
+  <div id="contact-container">
+    <div id="connect-container">
+      <div id="links">
+        {
+          contact.map((item: ContactInfo) => (
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <Icon class="icon" name={item.icon} />
+              <h3>{item.name}</h3>
+            </a>
+          ))
+        }
+      </div>
+      <img
+        id="img-otrocadev"
+        src="images/ot-roca-no-bg.avif"
+        alt="Picture of Ot Roca, also known as otrocadev"
+      />
     </div>
-    <img
-      id="img-otrocadev"
-      src="images/ot-roca-no-bg.avif"
-      alt="Picture of Ot Roca, also known as otrocadev"
-    />
+    <p>
+      👋 Hi, I’m Ot Roca, a Frontend Developer with a strong interest in
+      building modern, scalable, and user-focused web applications. I enjoy
+      transforming ideas into well-structured digital products, paying close
+      attention to code quality, performance, and user experience.
+    </p>
+    <p>
+      🧑🏻‍💻 I am currently studying a Bachelor’s degree in Software Development
+      Techniques at UOC (Universitat Oberta de Catalunya), taught entirely in
+      English. In addition, I recently completed a Frontend Development bootcamp
+      with Angular, where I worked hands-on with real-world projects, and best
+      practices in web development.
+    </p>
+    <p>
+      🚀 My main expertise lies in Frontend development, working with
+      technologies such as Angular, Tailwind CSS, JavaScript, and modern UI
+      patterns. I also have experience collaborating on Back-End tasks when
+      required, which helps me better understand the full development process.
+      I’m a proactive developer with a strong focus on continuous learning and
+      technical growth. I enjoy tackling new challenges and aim to deliver real
+      value from day one, both in individual tasks and team environments.
+    </p>
+    <p>
+      🎯 Currently, I am looking for a Junior Frontend Developer position where
+      I can continue improving my skills, contribute to meaningful projects, and
+      grow as a software developer with a product-driven mindset. 📩 If you’d
+      like to know more about my work or discuss a potential project, feel free
+      to get in touch.
+    </p>
   </div>
 </section>
 
 <style>
   #contact {
     padding-bottom: 8rem;
+    max-width: var(--max-section-width);
   }
   h3 {
     margin: 1rem 0;
@@ -45,20 +77,16 @@ interface ContactInfo {
     text-decoration: underline;
   }
   p {
-    color: var(--screaming-green);
+    color: var(--antiflash-white);
     font-weight: 700;
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
 
   #connect-container {
     display: flex;
-    flex-direction: column-reverse;
-    max-width: 80%;
-    margin: 0;
-    padding: 1rem;
-    @media (min-width: 720px) {
-      flex-direction: row;
-    }
+    justify-content: center;
+    margin-bottom: 4rem;
+    width: 100%;
   }
 
   a {
