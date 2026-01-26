@@ -80,6 +80,10 @@ interface ContactInfo {
     color: var(--antiflash-white);
     font-weight: 700;
     font-size: var(--font-size-lg);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   #connect-container {
@@ -87,6 +91,10 @@ interface ContactInfo {
     justify-content: center;
     margin-bottom: 4rem;
     width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   a {
@@ -99,6 +107,10 @@ interface ContactInfo {
   img {
     mask-image: linear-gradient(black 80%, transparent);
     width: auto;
+
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
   }
 
   .icon {
